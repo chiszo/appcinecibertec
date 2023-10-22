@@ -20,7 +20,7 @@ public class EstadoService {
         return estadoRepository.save(estado) !=null;
     }
 
-    public boolean eliminarEstado(Integer idestado){
+    public void eliminarEstado(Integer idestado){
         estadoRepository.deleteById(idestado);
     }
 }
