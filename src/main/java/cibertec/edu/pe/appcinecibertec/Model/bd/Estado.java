@@ -1,4 +1,4 @@
-package cibertec.edu.pe.appcinecibertec.Model;
+package cibertec.edu.pe.appcinecibertec.Model.bd;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
