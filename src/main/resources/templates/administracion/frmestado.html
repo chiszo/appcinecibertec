@@ -3,15 +3,17 @@
 <head th:replace="~{layout::head}">
 </head>
 <body>
+<script type="text/javascript" th:src="@{/script/web/administracion/frmestado.js}"></script>
 <nav th:replace="~{layout::menu}"></nav>
 <div class="card">
     <div class="card-header">
         Listado de estados
     </div>
     <div class="card-body">
-        <button type="button" class="btn btn-info">
+        <button id="btnnuevo" type="button" class="btn btn-info">
             <i class="bi bi-balloon"> Agregar</i>
         </button>
+
         <table class="table">
             <thead>
             <tr>
@@ -26,6 +28,25 @@
             </tr>
             </tbody>
         </table>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalestado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Mantenimiento Estado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="txtdescripcion" class="form-label">Descripción:</label>
+                <input type="text" class="form-control" id="txtdescripcion" placeholder="Ingrese descripción">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
 </div>
 </body>
