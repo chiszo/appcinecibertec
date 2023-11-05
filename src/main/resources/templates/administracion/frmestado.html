@@ -28,12 +28,16 @@
                 <td th:text="${estado.idestado}"></td>
                 <td th:text="${estado.descestado}"></td>
                 <td>
-                    <button type="button" class="btn btn-info">
+                    <button type="button" class="btn btn-info btnactualizar"
+                            th:data-idestado="${estado.idestado}"
+                            th:data-descestado="${estado.descestado}">
                         <i class="bi bi-pencil-square"></i>
                     </button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-warning">
+                    <button type="button" class="btn btn-warning btneliminar"
+                            th:data-idestado="${estado.idestado}"
+                            th:data-descestado="${estado.descestado}">
                         <i class="bi bi-trash"></i>
                     </button>
                 </td>
@@ -53,6 +57,7 @@
             <div class="modal-body">
                 <label for="txtdescripcion" class="form-label">Descripción:</label>
                 <input type="text" class="form-control" id="txtdescripcion" placeholder="Ingrese descripción">
+                <input type="hidden" id="hddidestado" value="0">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
