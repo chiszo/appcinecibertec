@@ -1,6 +1,6 @@
 package cibertec.edu.pe.appcinecibertec.Service;
 
-import cibertec.edu.pe.appcinecibertec.Model.Estado;
+import cibertec.edu.pe.appcinecibertec.Model.bd.Estado;
 import cibertec.edu.pe.appcinecibertec.Model.response.ResultadoResponse;
 import cibertec.edu.pe.appcinecibertec.Repository.EstadoRepository;
 import lombok.AllArgsConstructor;

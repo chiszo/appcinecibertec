@@ -46,7 +46,7 @@
         </table>
     </div>
 </div>
-<!-- Modal -->
+<!-- Modal AGREGAR Y ACTUALIZAR-->
 <div class="modal fade" id="modalestado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -62,6 +62,25 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i> Cerrar</button>
                 <button id="btnguardar" onclick="click" type="button" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal ELIMINAR-->
+<div class="modal fade" id="modaleliminarestado" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Eliminar estado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label id="lblmensajeeliminar"></label>
+                <input type="hidden" value="0" id="hddidestadoeliminar">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i> Cerrar</button>
+                <button id="btneliminar" onclick="click" type="button" class="btn btn-primary"><i class="bi bi-save"></i> Eliminar</button>
             </div>
         </div>
     </div>

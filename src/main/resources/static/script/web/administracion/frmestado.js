@@ -6,7 +6,10 @@ $(document).on("click","#btnnuevo",function(){
 });
 
 $(document).on("click",".btneliminar",function(){
-    $("#modalestado").modal("show");
+    $("#lblmensajeeliminar").text("Está seguro de eliminar el curso " +
+    $(this).attr("data-descestado") + "?");
+    $("#hddidestadoeliminar").val($(this).attr("data-idestado"));
+    $("#modaleliminarestado").modal("show");
 });
 
 $(document).on("click",".btnactualizar",function(){
@@ -30,6 +33,24 @@ $(document).on("click","#btnguardar",function(){
             }
             alert(resultado.mensaje);
             $("#modalestado").modal("hide")
+        }
+    });
+});
+
+$(document).on("click","#btneliminar",function(){
+    $.ajax({
+        type:"DELETE",
+        contentType:"application/json",
+        url:"/administracion/estado/eliminar",
+        data: JSON.stringify({
+            idestado:$("#hddidestadoeliminar").val(),
+        }),
+        success: function(resultado){
+            if(resultado.respuesta){
+                listarEstados();
+            }
+            alert(resultado.mensaje);
+            $("#modaleliminarestado").modal("hide")
         }
     });
 });
