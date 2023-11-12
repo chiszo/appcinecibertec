@@ -14,6 +14,8 @@ public class Sala {
     private String descsala;
     @Column(name ="asientos")
     private Integer asientos;
-    @Column(name ="idestado")
-    private Integer idestado;
+
+    @ManyToOne
+    @JoinColumn(name ="idestado")
+    private Estado estado;
 }
