@@ -27,6 +27,7 @@ $(document).on("click",".btnactualizar",function(){
     $("#cboestado").val($(this).attr("data-idestado"));
     $("#hddidsala").val($(this).attr("data-idsala"));
     $("#cboestado").empty();
+    var idestado = $(this).attr("data-idestado");
     $.ajax({
         type:"GET",
                 url:"/administracion/estado/listar",
@@ -39,10 +40,11 @@ $(document).on("click",".btnactualizar",function(){
                             </option>`
                         )
                     });
+                    $("#cboestado").val(idestado);
         }
     });
 });
-/*
+
 $(document).on("click","#btnguardar",function(){
     $.ajax({
         type:"POST",
@@ -50,8 +52,8 @@ $(document).on("click","#btnguardar",function(){
         url:"/administracion/sala/registrar",
         data: JSON.stringify({
             idsala:$("#hddidsala").val(),
-            descsala:$("#txtdescripcion").val()
-            asientos:$("#txtasientos").val()
+            descsala:$("#txtdescripcion").val(),
+            asientos:$("#txtasientos").val(),
             idestado:$("#cboestado").val()
         }),
         success: function(resultado){
@@ -62,35 +64,35 @@ $(document).on("click","#btnguardar",function(){
             $("#modalsala").modal("hide")
         }
     });
-});*/
-/*
-function listarEstados(){
+});
+
+function listarSala(){
     $.ajax({
         type:"GET",
         url:"/administracion/sala/listar",
         datatype: "json",
         success: function(resultado){
-            $("#tblestado > tbody").html("");
+            $("#tblsala > tbody").html("");
             $.each(resultado, function(index, value){
                 $("#tblsala > tbody").append(
             "<tr>"+
-                "<td >"+value.idsala</td>
-                "<td >"+value.descsala</td>
-                <td >value.asientos</td>
-                <td >value.estado.descestado</td>
-                <td>
-                    <button type='button' class='btn btn-info btnactualizar'
-                            data-idsala='value.idsala'
-                            data-descsala='value.descsala'
-                            data-asientos='value.asientos'
-                            data-idestado='value.estado.idestado'
-                    >
-                        <i class='bi bi-pencil-square'></i>
-                    </button>
-                </td>
-            </tr>
+                "<td >"+value.idsala+"</td>"+
+                "<td >"+value.descsala+"</td>"+
+                "<td >"+value.asientos+"</td>"+
+                "<td >"+value.estado.descestado+"</td>"+
+                "<td >"+
+                    "<button type='button' class='btn btn-info btnactualizar'"+
+                            "data-idsala='"+value.idsala+"'"+
+                            "data-descsala='"+value.descsala+"'"+
+                            "data-asientos='"+value.asientos+"'"+
+                            "data-idestado='"+value.estado.idestado+"'"+
+                    ">"+
+                        "<i class='bi bi-pencil-square'></i>"+
+                    "</button>"+
+                "</td>"+
+            "</tr>"
                 )
             });
         }
     });
-}*/
+}
